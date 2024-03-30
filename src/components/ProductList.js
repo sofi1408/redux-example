@@ -1,14 +1,6 @@
 import React from 'react';
 
-// import {connect} from 'react-redux';
-import { useDispatch } from 'react-redux';
-
-import addToCart from './redux/action';
-
-
-const ProductList = () => {
-
-  const dispatch = useDispatch();
+const ProductList = ({addToCart}) => {
 
   const products = [
     { id: 1, name: 'Product 1', price: 20 },
@@ -24,7 +16,7 @@ const ProductList = () => {
         {products.map(product => (
           <li key={product.id}>
             {product.name} - ${product.price}
-            <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+            <button onClick={() => addToCart(product)}>Add to Cart</button>
           </li>
         ))}
       </ul>
@@ -32,9 +24,4 @@ const ProductList = () => {
   );
 };
 
-// const mapDispatchToProps = (dispatch) => ({
-//   addToCart: (product) => dispatch(addToCart(product))
-// })
-
-// export default connect(null, mapDispatchToProps)(ProductList);
 export default ProductList;

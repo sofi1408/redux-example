@@ -1,11 +1,6 @@
 import React from 'react';
 
-// import {connect} from 'react-redux';
-
-import { useSelector } from 'react-redux';
-
-const Cart = () => {
-  const cart = useSelector(state => state.cart);
+const Cart = ({cart}) => {
   return (
     <div>
       <h2>Shopping Cart</h2>
@@ -20,9 +15,4 @@ const Cart = () => {
   );
 };
 
-// const mapStateToProps = state => ({
-//   cart: state.cart
-// });
-
-// export default connect(mapStateToProps)(Cart);
 export default Cart;
